@@ -1,0 +1,45 @@
+
+        <section class="volcano-search">
+            <h1>Search</h1>
+
+            <form class="search-form"  method="get">
+                <input type="text" class="search-volcano" name="name" placeholder="Search by Name..." value="">
+                <select id="type" name="typeVolcano">
+                    <option value="Supervolcanoes">Supervolcanoes</option>
+                    <option value="Submarine">Submarine</option>
+                    <option value="Subglacial">Subglacial</option>
+                    <option value="Mud">Mud</option>
+                    <option value="Stratovolcanoes">Stratovolcanoes</option>
+                    <option value="Shield">Shield</option>
+                </select>
+                <button type="submit" class="btn-search">Search</button>
+            </form>
+
+            <section class="volcano-catalog">
+
+                <div class="item-list">
+            {{#each volcanoes}}
+                <div class="volcano">
+                    <div class="volcano-img">
+                        <img src="{{image}}">
+                    </div>
+                    <div class="volcano-info">
+                        <h1>{{name}}</h1>
+                        <p><span>Location: </span>{{location}}</p>
+                        <p><span>Volcano Type: </span>{{typeVolcano}}</p>
+                    </div>
+
+                    <a href="/volcanoes/{{_id}}/details" class="btn-details">Details</a>
+                </div>
+                {{else}}
+                <div class="no-match">
+                    <p>No match was found!</p>
+                </div>
+                </div>>
+            {{/each}}
+            </section>>
+
+
+            
+
+        </section>
